@@ -1,0 +1,24 @@
+body
+{
+    background-image:URL('intern.PNG');
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.field1
+{
+    background-color:rgb(163, 165, 42);
+    font-size:40px;
+    margin:200px;
+    padding:20px;
+    border-style:groove;
+    border-width:5px;
+    border-radius:5px;
+    color:rgb(139, 0, 30);
+}
+.field2
+{
+    margin-left:25px;
+    color:lightsalmon;
+    font-size:20px;
+}

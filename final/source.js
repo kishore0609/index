@@ -1,4 +1,4 @@
-var namev,genderv,agev,yearv,clgnamev,emailv,cityv,phonev;
+var namev,genderv,agev,yearv,collegev,emailv,cityv,phonev;
 function readForm()
 {
     namev=document.getElementById("name").value;
@@ -9,7 +9,7 @@ function readForm()
     emailv=document.getElementById("email").value;
     cityv=document.getElementById("city").value;
     contactv=document.getElementById("phone").value;
-    console.log(namev,genderv,agev,yearv,clgnamev,emailv,cityv,phonev);
+    console.log(namev,genderv,agev,yearv,collegev,emailv,cityv,phonev);
 }
 document.getElementById("insert").onclick=function()
 {
@@ -31,20 +31,20 @@ document.getElementById("read").onclick=function()
     readForm();
     firebase.database().ref("student/"+namev).on("value",function(snap){
     document.getElementById("name").value=snap.val().name;
-    document.getElementById("Gender").value=snap.val().gender;
+    document.getElementById("gender").value=snap.val().gender;
     document.getElementById("age").value=snap.val().age;
     document.getElementById("year").value=snap.val().year;
     document.getElementById("college").value=snap.val().college;
     document.getElementById("email").value=snap.val().email;
     document.getElementById("city").value=snap.val().city;
-    document.getElementById("phone").value=snap.val().contact;
+    document.getElementById("phone").value=snap.val().phone;
 
     });
 };
 
 document.getElementById("update").onclick=function(){
     readForm();
-    firebase.database().ref("student/"+namev).update({name:namev,Gender:genderv,age:agev,year:yearv,college:clgnamev,email:emailv,city:cityv,phone:phonev,parent:parentv,});
+    firebase.database().ref("student/"+namev).update({Gender:genderv,age:agev,year:yearv,college:collegev,email:emailv,city:cityv,phone:phonev,parent:parentv,});
     alert("data updated");
     document.getElementById("name").value="";
     document.getElementById("gender").value="";
